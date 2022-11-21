@@ -1,0 +1,106 @@
+[
+  {
+    "_id": "637b48a39e36b22aa63cd5a2",
+    "vacancies": 134,
+    "companies": 62,
+    "type": "mobile",
+    "technology": "React Native",
+    "date": "2022-11-21T09:42:39.408Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a3",
+    "vacancies": 423,
+    "companies": 259,
+    "type": "web",
+    "technology": "React",
+    "date": "2022-11-21T09:42:50.904Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a4",
+    "vacancies": 319,
+    "companies": 227,
+    "type": "backend",
+    "technology": "Node",
+    "date": "2022-11-21T09:43:02.436Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a5",
+    "vacancies": 74,
+    "companies": 50,
+    "type": "mobile",
+    "technology": "Flutter",
+    "date": "2022-11-21T09:43:14.250Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a6",
+    "vacancies": 644,
+    "companies": 342,
+    "type": "web",
+    "technology": "Angular",
+    "date": "2022-11-21T09:43:26.961Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a7",
+    "vacancies": 161,
+    "companies": 88,
+    "type": "web",
+    "technology": "Vue",
+    "date": "2022-11-21T09:43:39.884Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a8",
+    "vacancies": 88,
+    "companies": 60,
+    "type": "backend",
+    "technology": "Laravel",
+    "date": "2022-11-21T09:43:52.610Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5a9",
+    "vacancies": 33,
+    "companies": 17,
+    "type": "backend",
+    "technology": "Django",
+    "date": "2022-11-21T09:44:05.879Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5aa",
+    "vacancies": 312,
+    "companies": 173,
+    "type": "backend",
+    "technology": "Spring",
+    "date": "2022-11-21T09:44:17.939Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5ab",
+    "vacancies": 919,
+    "companies": 466,
+    "type": "backend",
+    "technology": "Express",
+    "date": "2022-11-21T09:44:30.018Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5ac",
+    "vacancies": 12,
+    "companies": 10,
+    "type": "backend",
+    "technology": "Ruby on Rails",
+    "date": "2022-11-21T09:44:42.343Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5ad",
+    "vacancies": 45,
+    "companies": 27,
+    "type": "mobile",
+    "technology": "Ionic",
+    "date": "2022-11-21T09:44:54.512Z"
+  },
+  {
+    "_id": "637b48a39e36b22aa63cd5ae",
+    "vacancies": 24,
+    "companies": 5,
+    "type": "web",
+    "technology": "ReactJS",
+    "date": "2022-11-21T09:45:06.478Z"
+  }
+]
