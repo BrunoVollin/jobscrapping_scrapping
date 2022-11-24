@@ -1,6 +1,6 @@
 import Database from "./database";
 import Scrapping from "./scrapping";
-import Report from "./sendReport";
+import Report from "./Report";
 
 
 export default async function main() {

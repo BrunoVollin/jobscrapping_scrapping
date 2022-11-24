@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("./database"));
 const scrapping_1 = __importDefault(require("./scrapping"));
-const sendReport_1 = __importDefault(require("./sendReport"));
+const Report_1 = __importDefault(require("./Report"));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -43,10 +43,10 @@ function main() {
             const vacancies = scrapping.getVacancies;
             const database = new database_1.default();
             yield database.connect();
-            database.insertManyVacancies(vacancies);
+            yield database.insertManyVacancies(vacancies);
             const vacanciestoday = yield database.getVacanciesOneHour();
             console.log({ vacanciestoday });
-            const report = new sendReport_1.default(vacanciestoday);
+            const report = new Report_1.default(vacanciestoday);
             yield report.generateHtmlReport();
             const html = report.getReportHtml();
             console.log({ html });
@@ -59,7 +59,7 @@ function main() {
             yield database.close();
         }
         catch (error) {
-            const report = new sendReport_1.default([]);
+            const report = new Report_1.default([]);
             const today = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
             console.log(error);
             yield report.sendEmail({

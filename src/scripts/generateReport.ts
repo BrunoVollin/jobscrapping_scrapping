@@ -1,5 +1,5 @@
 import { VacancyType } from '../scrapping';
-import Report from './../sendReport';
+import Report from '../Report';
 
 const vacancies = [
     {

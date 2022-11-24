@@ -12,18 +12,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const database_1 = __importDefault(require("./../database"));
-const writeAJson_1 = require("./../utils/writeAJson");
+const Report_1 = __importDefault(require("../Report"));
+const vacancies = [
+    {
+        technology: 'Node.js',
+        vacancies: 10,
+        companies: 5,
+        date: new Date()
+    },
+    {
+        technology: 'React',
+        vacancies: 10,
+        companies: 5,
+        date: new Date()
+    },
+];
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const db = new database_1.default();
-        yield db.connect();
-        const vacancies = yield db.getTodayVacancies();
-        (0, writeAJson_1.writeAJson)({
-            fileName: "vacancies.json",
-            path: "./src/data",
-            data: vacancies
-        });
+        const report = new Report_1.default(vacancies);
+        yield report.generateHtmlReport();
+        const html = report.getReportHtml();
+        console.log(html);
     });
 }
 main();

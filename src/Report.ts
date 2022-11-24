@@ -11,12 +11,15 @@ export default class Report {
     }
 
     async generateHtmlReport() {
-        try {
-            if (this.vacancies.length === 0) {
-                throw new Error('No vacancies found');
-            }
+        let html: string;
 
-            const html = `
+        if (this.vacancies.length === 0) {
+            html = "<h1>Não foram encontradas vagas</h1>";
+            this.reportHtml = html;
+            return 
+        }
+
+        html = `
     <html>
         <head>
             <title>Relatório de vagas</title>
@@ -36,8 +39,8 @@ export default class Report {
                 </thead>
                 <tbody>
                     ${this.vacancies.map(({ technology, vacancies, companies, date }) => {
-                if (technology !== undefined) {
-                    return `
+            if (technology !== undefined) {
+                return `
                         <tr>
                             <td>${technology}</td>
                             <td>${vacancies}</td>
@@ -46,9 +49,9 @@ export default class Report {
                             <td>${date.toLocaleTimeString('pt-BR')}</td>
                         </tr>
                     `}
-            }).join('')
+        }).join('')
 
-                }
+            }
             <img src="https://cdn.discordapp.com/attachments/1043562463108550796/1043579869654700152/giphy.gif" alt="this slowpoke moves"  width="250" alt="404 image"/>
                 </tbody>
             </table>
@@ -62,10 +65,8 @@ export default class Report {
         </body>
     </html>
     `
-            this.reportHtml = html;
-        } catch (error) {
-            throw error;
-        }
+        this.reportHtml = html;
+
 
     }
 
@@ -75,20 +76,19 @@ export default class Report {
         let transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 465,
-            secure: true, 
+            secure: true,
             auth: {
-                user: "bruno.3av@gmail.com", 
-                pass: "rzawijkbjqcgemqp", 
+                user: "bruno.3av@gmail.com",
+                pass: "rzawijkbjqcgemqp",
             },
         });
 
-t
         let info = await transporter.sendMail({
-            from: '"Robo do Violamento 🤖" <foo@example.com>', 
-            to: "bruno.3av@gmail.com, leolang99@gmail.com, fabio.neto@ges.inatel.br, prodiodsignjac@gmail.com, georgel.jc98@gmail.com", 
-            subject: subject, 
-            text: text, 
-            html: html, 
+            from: '"Robo do Violamento 🤖" <foo@example.com>',
+            to: "bruno.3av@gmail.com, leolang99@gmail.com, fabio.neto@ges.inatel.br, prodiodsignjac@gmail.com, georgel.jc98@gmail.com",
+            subject: subject,
+            text: text,
+            html: html,
         });
 
         console.log("Message sent: %s", info.messageId);

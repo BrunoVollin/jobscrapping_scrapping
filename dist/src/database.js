@@ -55,6 +55,10 @@ class Database {
         return __awaiter(this, void 0, void 0, function* () {
             const collection = yield ((_a = this.client) === null || _a === void 0 ? void 0 : _a.db("web").collection("vagas"));
             const vacancies = yield (collection === null || collection === void 0 ? void 0 : collection.find({ date: { $gte: new Date(new Date().setHours(new Date().getHours() - 1)) } }).toArray());
+            const vacanciesIsEmpty = vacancies.length === 0;
+            if (vacanciesIsEmpty) {
+                throw new Error("Not found vacancies");
+            }
             return vacancies;
         });
     }

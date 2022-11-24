@@ -34,7 +34,12 @@ export default class Database {
 
     async getVacanciesOneHour() {
         const collection = await this.client?.db("web").collection("vagas");
-        const vacancies = await collection?.find({ date: { $gte: new Date(new Date().setHours(new Date().getHours() - 1)) } }).toArray() as unknown
+        const vacancies = await collection?.find({ date: { $gte: new Date(new Date().setHours(new Date().getHours() - 1)) } }).toArray() as []
+        const vacanciesIsEmpty = vacancies.length === 0;
+        
+        if (vacanciesIsEmpty) {
+            throw new Error("Not found vacancies")
+        }
         return vacancies as VacancyType[];
     }
 
