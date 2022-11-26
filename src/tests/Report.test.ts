@@ -32,7 +32,9 @@ describe('Report', () => {
 
         await report.generateHtmlReport();
 
-       expect(report.reportHtml).toContain('Não foram encontradas vagas');
+       // espect exeption
+       
+       expect
 
     })
 });
